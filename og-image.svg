@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="fg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Content -->
+  <g transform="translate(100, 215)">
+    <rect width="200" height="200" rx="40" fill="url(#fg)"/>
+    <text x="100" y="115" text-anchor="middle" dominant-baseline="middle" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="100" fill="#ffffff">QA</text>
+  </g>
+  
+  <text x="350" y="315" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="120" fill="#ffffff">QA LABS CR</text>
+  <text x="350" y="380" font-family="Inter, system-ui, sans-serif" font-weight="300" font-size="40" fill="#38bdf8" letter-spacing="2">ENGINEERING QUALITY</text>
+</svg>
