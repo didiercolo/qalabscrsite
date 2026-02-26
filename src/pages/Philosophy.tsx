@@ -1,8 +1,14 @@
 import { Terminal } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const Philosophy = () => {
     return (
         <div className="bg-lab-dark min-h-screen text-white pt-10 pb-20">
+            <Helmet>
+                <title>The QALabs Manifesto | Our Philosophy on Quality Engineering</title>
+                <meta name="description" content="Quality is not improvised; it is engineered. Read our manifesto on manual execution, AI in testing, and why traditional gatekeeping doesn't scale." />
+                <link rel="canonical" href="https://qalabscr.com/philosophy" />
+            </Helmet>
 
             {/* Manifesto Layout */}
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

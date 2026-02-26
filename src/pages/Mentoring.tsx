@@ -1,6 +1,6 @@
-import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
-import { Brain, Target, Code, CheckCircle, ArrowRight } from 'lucide-react';
+import { Brain, Target, Code, CheckCircle } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const Mentoring = () => {
     const roadmap = [
@@ -28,6 +28,11 @@ const Mentoring = () => {
 
     return (
         <div className="bg-lab-dark min-h-screen text-white pt-10 pb-20">
+            <Helmet>
+                <title>QA Mentorship & Immersion Program | QA Labs CR</title>
+                <meta name="description" content="Transform from a manual tester to a Senior QA Engineer. Our brutal and technical mentorship covers TypeScript, Playwright, CI/CD, and System Design." />
+                <link rel="canonical" href="https://qalabscr.com/mentoring" />
+            </Helmet>
 
             {/* Hero */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
@@ -43,9 +48,7 @@ const Mentoring = () => {
                     A brutal, honest, and technical mentorship program designed to transform manual testers into
                     Senior QA Engineers who can architect systems.
                 </p>
-                <Button variant="primary" className="bg-mentor text-white hover:bg-mentor/90 focus:ring-mentor border-none">
-                    APPLY FOR IMMERSION
-                </Button>
+
             </div>
 
             {/* The Roadmap */}
@@ -102,9 +105,7 @@ const Mentoring = () => {
                             "I don't want a cert. I want to build systems." <br />
                             — If this sounds like you, let's talk.
                         </p>
-                        <Button variant="outline" className="border-mentor text-mentor hover:bg-mentor/10" icon={<ArrowRight size={16} />}>
-                            SCHEDULE INTERVIEW
-                        </Button>
+
                     </div>
                 </div>
             </div>

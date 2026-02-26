@@ -2,20 +2,21 @@
   "name": "temp_web",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://didiercolo.github.io/qalabscrsite",
+  "homepage": "https://qalabscr.com",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && cp dist/index.html dist/404.html",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "lucide-react": "^0.563.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-helmet-async": "^2.0.5",
     "react-router-dom": "^7.13.0"
   },
   "devDependencies": {

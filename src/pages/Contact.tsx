@@ -1,10 +1,16 @@
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { Mail, Calendar, MessageSquare, MapPin } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const Contact = () => {
     return (
         <div className="bg-lab-dark min-h-screen text-white pt-10 pb-20">
+            <Helmet>
+                <title>Contact QA Labs CR | Initialize Quality Protocol</title>
+                <meta name="description" content="Get in touch with QA Labs CR for technical audits, mentorship, or general inquiries about our quality engineering services. Operating globally from Costa Rica." />
+                <link rel="canonical" href="https://qalabscr.com/contact" />
+            </Helmet>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">

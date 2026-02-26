@@ -1,10 +1,15 @@
-import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { BarChart3, Lock, Zap, CheckSquare } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const Teams = () => {
     return (
         <div className="bg-lab-dark min-h-screen text-white pt-10 pb-20">
+            <Helmet>
+                <title>QA for Engineering Teams & Technical Partnership | QA Labs CR</title>
+                <meta name="description" content="Scale your engineering velocity without compromising quality. We build automated CI/CD pipelines, security gates, and quality dashboards for modern teams." />
+                <link rel="canonical" href="https://qalabscr.com/teams" />
+            </Helmet>
 
             {/* Header */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -21,10 +26,7 @@ const Teams = () => {
                         Your team is shipping fast, but quality is lagging. We deploy senior engineers to build the infrastructure
                         that keeps your velocity high and your production incidents low.
                     </p>
-                    <div className="flex gap-4">
-                        <Button variant="primary">START PARTNERSHIP</Button>
-                        <Button variant="outline">DOWNLOAD CASE STUDY</Button>
-                    </div>
+
                 </div>
                 <div className="relative">
                     {/* Abstract System Visual */}
@@ -106,9 +108,7 @@ const Teams = () => {
                             <span>Team training included</span>
                         </div>
                     </div>
-                    <Button fullWidth variant="primary" className="md:w-auto">
-                        AUDIT MY ARCHITECTURE
-                    </Button>
+
                 </div>
             </div>
 

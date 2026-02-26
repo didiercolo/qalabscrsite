@@ -1,10 +1,40 @@
-import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
-import { ArrowRight, Terminal, Cpu, Shield, Activity } from 'lucide-react';
+import { Cpu, Shield, Activity } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     return (
         <div className="bg-lab-dark text-white overflow-hidden">
+            <Helmet>
+                <title>QA Labs CR | Technical Quality Assurance & Engineering Lab</title>
+                <meta name="description" content="QA Labs CR is a technical exploration lab designing scalable QA systems, AI-driven testing, and cultivating senior-level engineering judgment. Beyond manual execution." />
+                <link rel="canonical" href="https://qalabscr.com/" />
+
+                {/* Open Graph Tags */}
+                <meta property="og:title" content="QA Labs CR | Technical Quality Assurance & Engineering Lab" />
+                <meta property="og:description" content="QA Labs CR is a technical exploration lab designing scalable QA systems, AI-driven testing, and cultivating senior-level engineering judgment." />
+                <meta property="og:url" content="https://qalabscr.com/" />
+            </Helmet>
+
+            {/* Structured Data (JSON-LD) */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": "QA Labs CR",
+                        "url": "https://qalabscr.com",
+                        "logo": "https://qalabscr.com/favicon.svg",
+                        "description": "Technical exploration lab for Quality Assurance systems and AI-driven testing.",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "San Jose",
+                            "addressCountry": "CR"
+                        }
+                    })
+                }}
+            />
 
             {/* Hero Section */}
             <section className="relative min-h-[90vh] flex items-center justify-center p-4">
@@ -32,14 +62,7 @@ const Home = () => {
                         integrate AI-driven testing, and cultivate senior-level engineering judgment.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <Button variant="primary" icon={<Terminal size={18} />}>
-                            EXPLORE THE LAB
-                        </Button>
-                        <Button variant="secondary" icon={<ArrowRight size={18} />}>
-                            MENTORSHIP ROADMAP
-                        </Button>
-                    </div>
+
                 </div>
             </section>
 
@@ -116,7 +139,7 @@ const Home = () => {
                             <p className="text-gray-400 mb-8 flex-grow">
                                 Stuck in manual execution? Build your roadmap to becoming a Senior QA Engineer.
                             </p>
-                            <Button variant="outline" className="mt-auto">Start Immersion</Button>
+
                         </div>
                     </div>
 
@@ -127,7 +150,7 @@ const Home = () => {
                             <p className="text-gray-400 mb-8 flex-grow">
                                 Need sustainable quality? We build the infrastructure you need to scale without breaking.
                             </p>
-                            <Button variant="outline" className="!text-mentor-DEFAULT !border-mentor-DEFAULT hover:!bg-mentor-DEFAULT/10 mt-auto">Partner With Us</Button>
+
                         </div>
                     </div>
                 </div>

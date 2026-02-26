@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { Menu, X, Terminal, Cpu, Users, Code2 } from 'lucide-react';
-import { Button } from '../ui/Button';
+import { Menu, X, Cpu, Users, Code2 } from 'lucide-react';
+
 
 export const MainLayout = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const location = useLocation();
 
     const navItems = [
-        { label: 'The Lab', path: '/lab', icon: <Terminal size={16} /> },
         { label: 'Mentoring', path: '/mentoring', icon: <Users size={16} /> },
         { label: 'For Teams', path: '/teams', icon: <Cpu size={16} /> },
         { label: 'Philosophy', path: '/philosophy', icon: <Code2 size={16} /> },
@@ -32,8 +31,7 @@ export const MainLayout = () => {
                                 <span className="font-mono font-bold text-cyan-DEFAULT text-xl">QA</span>
                             </div>
                             <div className="flex flex-col">
-                                <span className="font-bold tracking-wider text-white">LABS</span>
-                                <span className="text-[10px] text-gray-400 tracking-widest uppercase">System Design</span>
+                                <span className="font-bold tracking-wider text-white">QA LABS CR</span>
                             </div>
                         </Link>
 
@@ -52,17 +50,16 @@ export const MainLayout = () => {
                                     {item.label}
                                 </Link>
                             ))}
-                            <Button variant="outline" className="hidden lg:inline-flex text-xs h-9 px-4">
-                                JOIN THE LAB
-                            </Button>
                         </nav>
 
                         {/* Mobile Menu Button */}
                         <button
                             className="md:hidden text-white p-2"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            aria-expanded={isMenuOpen}
+                            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                         >
-                            {isMenuOpen ? <X /> : <Menu />}
+                            {isMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
                         </button>
                     </div>
                 </div>
@@ -87,9 +84,6 @@ export const MainLayout = () => {
                                     </div>
                                 </Link>
                             ))}
-                            <div className="pt-4">
-                                <Button fullWidth variant="primary">JOIN THE LAB</Button>
-                            </div>
                         </div>
                     </div>
                 )}
@@ -104,12 +98,12 @@ export const MainLayout = () => {
             <footer className="bg-black/20 border-t border-white/10 py-12">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="col-span-1 md:col-span-2">
-                        <div className="flex items-center gap-2 mb-4">
-                            <div className="w-8 h-8 border border-white/20 flex items-center justify-center">
-                                <span className="font-mono font-bold text-white text-md">QA</span>
+                        <Link to="/" className="flex items-center gap-2 mb-4 group">
+                            <div className="w-8 h-8 border border-white/20 flex items-center justify-center group-hover:border-cyan-DEFAULT/50 transition-colors">
+                                <span className="font-mono font-bold text-white text-md group-hover:text-cyan-DEFAULT">QA</span>
                             </div>
-                            <span className="font-bold tracking-wider text-white">LABS</span>
-                        </div>
+                            <span className="font-bold tracking-wider text-white group-hover:text-cyan-DEFAULT transition-colors">LABS CR</span>
+                        </Link>
                         <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
                             The laboratory where QA excellence is engineered, not improvised.
                             Designing systems for the AI-driven future.
@@ -119,20 +113,12 @@ export const MainLayout = () => {
                     <div>
                         <h4 className="text-white font-mono text-sm font-bold mb-4 uppercase tracking-wider">Exploration</h4>
                         <ul className="space-y-2 text-sm text-gray-400">
-                            <li><Link to="/lab" className="hover:text-cyan-DEFAULT transition-colors">The Lab</Link></li>
                             <li><Link to="/mentoring" className="hover:text-cyan-DEFAULT transition-colors">Mentorship</Link></li>
                             <li><Link to="/teams" className="hover:text-cyan-DEFAULT transition-colors">For Teams</Link></li>
                         </ul>
                     </div>
 
-                    <div>
-                        <h4 className="text-white font-mono text-sm font-bold mb-4 uppercase tracking-wider">Connect</h4>
-                        <ul className="space-y-2 text-sm text-gray-400">
-                            <li><a href="#" className="hover:text-cyan-DEFAULT transition-colors">LinkedIn</a></li>
-                            <li><a href="#" className="hover:text-cyan-DEFAULT transition-colors">GitHub</a></li>
-                            <li><Link to="/contact" className="hover:text-cyan-DEFAULT transition-colors">Contact</Link></li>
-                        </ul>
-                    </div>
+
                 </div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-mono">
                     <p>© {new Date().getFullYear()} QALabs. Engineered in Costa Rica.</p>
