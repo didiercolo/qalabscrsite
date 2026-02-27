@@ -6,6 +6,7 @@ import Teams from './pages/Teams';
 
 import Philosophy from './pages/Philosophy';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 
 
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="teams" element={<Teams />} />
           <Route path="philosophy" element={<Philosophy />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Router>
